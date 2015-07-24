@@ -6,7 +6,7 @@
 <div class="video">
 	<strong class="firefox">Video Resumen:</strong><br>
 	<video controls width="70%" height="90%">
-		<source src="/videos/20141019_195053.mp4" type="video/mp4" />
+		<source src="/20141019_195053.mp4" type="video/mp4" />
 	</video>
 </div>	
 </div>
