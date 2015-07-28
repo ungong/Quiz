@@ -1,0 +1,2 @@
+<form method="get" action="/quizes/<%= quiz.id %>/answer">
+	<p> Pregunta: <%= quiz.pregunta %> </p>

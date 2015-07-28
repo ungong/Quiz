@@ -8,9 +8,17 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'Quiz' });
 });
 
-/* GET page quiz pregunta o respuesta. */
-router.get('/quizes/question', quizController.question);
-router.get('/quizes/answer', quizController.answer);
-router.get('author', quizController.autor);
+// Lista de todas las preguntas
+router.get('/quizes', quizController.index);
+
+/* GET page quiz pregunta seleccionada de la lista. */
+//router.get('/quizes/question', quizController.question);
+router.get('/quizes/:quizId(\\d+)', quizController.show);
+
+/* GET page quiz respuesta a la pregunta seleccionada de la lista. */
+//router.get('/quizes/answer', quizController.answer);
+router.get('/quizes/:quizId(\\d+)/answer', quizController.answer);
+
+router.get('/author', quizController.autor);
 
 module.exports = router;
