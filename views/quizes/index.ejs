@@ -1,5 +1,17 @@
 <table>
-	<% var i; for (i=0; i<quizes.length; i++){ %>
-		<tr><td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %> </a></td></tr>
-	<% } %>
+	<form method="get" action="/quizes">
+		Introduzca texto para buscar la pregunta: <p>
+		<input type='text' name='search' value="Texto a buscar" />
+		<input type="submit" value="Enviar">
+	</form>
+	<br>
+	<hr>
+	<br>
+	<% if(quizes.length === 0){ %>
+			<tr><td><p>Ninguna Pregunta contiene el texto buscado</p></td></tr>
+	<% }else{
+			var i; for (i=0; i<quizes.length; i++){ %>
+				<tr><td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %> </a></td></tr>
+	<%	} 
+ 		} %>
 </table>
